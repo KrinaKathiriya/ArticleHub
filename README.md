@@ -17,9 +17,11 @@ To install **Article Hub**, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/KrinaKathiriya/ArticleHub.git
-2. Open the project in Xcode.
+2. Open the project in Xcode by tapping on reader.xcworkspace.
 3. Install any dependencies or frameworks, if necessary.
-4. Build and run the project on a simulator or device.
+4. Make sure you have selected reader as your current scheme for running destination.
+5. If running this project on device please make sure you have selected the Siging Team in Signing & Capabilities section.
+6. Build and run the project on a simulator or device.
 
 ## Usage
 

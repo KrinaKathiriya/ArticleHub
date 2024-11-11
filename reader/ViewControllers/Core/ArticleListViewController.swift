@@ -96,11 +96,29 @@ class ArticleListViewController: UIViewController {
             
             switch result {
             case .success(let articleResponse):
-                self.handleSuccessfulArticleFetch(articleResponse.articles ?? [])
+                let cleanArticles = self.cleanArticles(from: articleResponse)
+                self.handleSuccessfulArticleFetch(cleanArticles)
             case .failure:
                 Loaf("Failed to load articles", state: .error, sender: self).show()
             }
         }
+    }
+    
+    func cleanArticles(from response: ArticleResponse) -> [Articles] {
+        if let articles = response.articles {
+            return articles.filter { article in
+                // Check if the article content or title is not empty or marked as [Removed]
+                let isValidTitle = !(article.title?.isEmpty ?? true) && article.title != "[Removed]"
+                let isValidContent = !(article.content?.isEmpty ?? true) && article.content != "[Removed]"
+                let isValidDescription = article.description != "[Removed]"
+
+                // Only include valid articles
+                return isValidTitle && isValidContent && isValidDescription
+            }
+        }else{
+            return []
+        }
+        
     }
     
     private func handleSuccessfulArticleFetch(_ articles: [Articles]) {
