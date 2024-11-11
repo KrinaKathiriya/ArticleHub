@@ -37,7 +37,8 @@ To install **Article Hub**, follow these steps:
 - AlamofireNetworkActivityIndicator: for handling network activity indicator visibility based on network requests.
 - XCGLogger : For logging network request
 - ReachabilitySwift : Used to check the device's network connectivity status.
-- Loaf : Used to show toast messages
+- Loaf : Used to show toast messages.
+- SwiftSoup : Used to fetch content from URL of article.
 
 ## Directory Structure
 The project follows a simple directory structure:
@@ -80,6 +81,7 @@ reader/
 │   ├── Core/
 │   │   ├── Cells/
 │   │   │   └── ArticleTableViewCell.swift  # Custom table view cell for displaying articles.
+            └── ArticleDescripotionCell.swift  # Custom table view cell for displaying content of article.
 │   │   └── Views/
 │   │       ├── Main.storyboard     # Main UI storyboard for the app.
 │   │       ├── ArticleDetailViewController.swift # Displays the detailed content of an article.
