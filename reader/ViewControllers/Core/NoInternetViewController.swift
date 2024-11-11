@@ -35,7 +35,7 @@ class NoInternetViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func retryButtonTapped(_ sender: UIButton) {
-        if reachabilityManager?.isConnceted == true {
+        if reachabilityManager?.isConnected == true {
             delegate?.noInternetViewControllerDidTapRetry()
             dismiss(animated: true)
         } 
